@@ -11,12 +11,13 @@ function Input({ image, onChangeText,onPressIn, value }:any, props: any) {
 }
 const styles = StyleSheet.create({
     textInput: {
+        color: '#000',
         borderWidth: 1,
         borderRadius: 10,
         paddingStart: 40,
         marginHorizontal: 20,
         backgroundColor: '#fff',
-        borderColor: "#f0f0f0"
+        borderColor: "#f0f0f0",
     },
     image: {
         position: "absolute",

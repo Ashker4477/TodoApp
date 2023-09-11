@@ -23,7 +23,7 @@ function AddTask({ navigation, route }: any) {
         if (index) {
             setValue(task[index]);
         }
-    }, [])
+    }, [index]);
     return (
         <ScrollView style={styles.bg}>
             <StatusBar barStyle={'dark-content'}
@@ -54,27 +54,27 @@ function AddTask({ navigation, route }: any) {
             <View style={styles.container}>
                 <View style={styles.inputContainer}>
                     <Text style={styles.mH24}>Begining time</Text>
-                    <TimeInput value={value?.beginTime} setValue={(t:any)=>setValue((prev: any) => ({ ...prev, beginTime: t }))} />
+                    <TimeInput value={value?.beginTime} setValue={(t: any) => setValue((prev: any) => ({ ...prev, beginTime: t }))} />
                 </View>
                 <View style={styles.inputContainer}>
                     <Text style={styles.mH24}>Finished time</Text>
-                    <TimeInput value={value?.finishedTime} setValue={(t:any)=>setValue((prev: any) => ({ ...prev, finishedTime: t }))} />
+                    <TimeInput value={value?.finishedTime} setValue={(t: any) => setValue((prev: any) => ({ ...prev, finishedTime: t }))} />
                 </View>
             </View>
             <View style={styles.buttonContainer}>
-                <Button label={index ? "Edit task" : 'Add task'}
+                <Button label={index > -1 ? "Edit task" : 'Add task'}
                     onPress={() => {
-                        index ?
+                        index > -1 ?
                             dispatch(editTask({ index, value }))
                             :
                             dispatch(addTask(value))
                         setValue({
-                            taskName: '',
-                            subject: '',
-                            date: '',
-                            beginTime: '',
-                            finishedTime: '',
-                        });
+                                taskName: '',
+                                subject: '',
+                                date: '',
+                                beginTime: '',
+                                finishedTime: '',
+                            });
                         navigation.navigate('TaskList');
                     }}
                 />
