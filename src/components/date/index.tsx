@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Keyboard, View } from 'react-native';
+import { KeyboardAvoidingView, Platform, View } from 'react-native';
 import DatePicker from 'react-native-date-picker';
 import Input from '../input';
 import moment from 'moment';
@@ -9,9 +9,8 @@ function DateInput({ value, setValue }: any) {
     const [open, setOpen] = useState(false)
 
     return (
-        <View>
+        <KeyboardAvoidingView  behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
             <Input onPressIn={() => {
-                Keyboard.dismiss();
                 setOpen(true);
             }}
                 value={value ? value : ""} 
@@ -31,7 +30,7 @@ function DateInput({ value, setValue }: any) {
                     setOpen(false)
                 }}
             />
-        </View>
+        </KeyboardAvoidingView>
     )
 }
 

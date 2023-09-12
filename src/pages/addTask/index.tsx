@@ -20,21 +20,27 @@ function AddTask({ navigation, route }: any) {
         finishedTime: '',
     });
     useEffect(() => {
-        if (index>-1) {
+        if (index > -1) {
             setValue(task[index]);
+        }
+        return () => {
+            setValue({
+                taskName: '',
+                subject: '',
+                date: '',
+                beginTime: '',
+                finishedTime: '',
+            });
         }
     }, [index]);
     return (
         <ScrollView style={styles.bg}>
-            <StatusBar barStyle={'dark-content'}
-                backgroundColor={'#eeecf2'} />
+            <StatusBar barStyle={'dark-content'} backgroundColor={'#eeecf2'} />
             <View style={styles.pencil}>
-                <Image
-                    resizeMode='contain'
+                <Image resizeMode='contain'
                     style={styles.dot}
                     source={require("../../assets/images/ellipse/Ellipse166.png")} />
-                <Image
-                    resizeMode='contain'
+                <Image resizeMode='contain'
                     source={require("../../assets/images/pencil/pencil1.png")} />
             </View>
             <View style={styles.mT15}>
@@ -68,13 +74,6 @@ function AddTask({ navigation, route }: any) {
                             dispatch(editTask({ index, value }))
                             :
                             dispatch(addTask(value))
-                        setValue({
-                                taskName: '',
-                                subject: '',
-                                date: '',
-                                beginTime: '',
-                                finishedTime: '',
-                            });
                         navigation.navigate('TaskList');
                     }}
                 />
