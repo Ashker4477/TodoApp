@@ -1,15 +1,23 @@
 import React, { memo } from 'react'
 import { Image, StatusBar, Text, TouchableOpacity, View } from 'react-native'
 import styles from './style';
+import { Svg, Path } from 'react-native-svg';
 
 function GetStarted({ navigation }: any) {
 
     return (
-        <View style={{ backgroundColor: '#fff' }}>
+        <View style={{ flex: 1 }}>
             <StatusBar
                 barStyle={'light-content'}
                 backgroundColor={'#754cf1'} />
-            <View style={styles.container}>
+            <View style={{
+                backgroundColor: "#754cf1",
+                zIndex: 10,
+                justifyContent: 'center',
+                alignItems: "center",
+                borderBottomLeftRadius: 100,
+                borderBottomRightRadius: 100,
+            }}>
                 <Image
                     style={styles.dotImage}
                     resizeMode='contain'
@@ -18,6 +26,11 @@ function GetStarted({ navigation }: any) {
                 <Image resizeMode='contain'
                     source={require("../../assets/images/task/TASK1.png")}
                     style={styles.image} />
+            </View>
+            <View style={{ position: "relative", top: -220 }}>
+                <Svg width="100%" height="71%" viewBox="0 0 100 100">
+                    <Path d="M0 0 L0 50 Q50 100 100 50 L100 0 Z" fill="#754cf1" />
+                </Svg>
             </View>
             <View style={styles.secContainer}>
                 <View style={styles.secTextView}>
