@@ -20,7 +20,7 @@ function AddTask({ navigation, route }: any) {
         finishedTime: '',
     });
     useEffect(() => {
-        if (index) {
+        if (index>-1) {
             setValue(task[index]);
         }
     }, [index]);
