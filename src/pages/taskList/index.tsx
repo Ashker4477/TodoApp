@@ -6,12 +6,13 @@ import { useAppDispatch, useAppSelector } from '../../slice/store';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { deleteTask } from '../../slice/card.slice.ts';
+import { navigate } from '../../App';
 
-function TaskList({ navigation }: any) {
+function TaskList() {
   const task = useAppSelector((state: any) => state.card);
   const dispatch = useAppDispatch();
   function edittask(index: number) {
-    navigation.navigate("AddTask", { index });
+    navigate("AddTask", { index });
   }
   function deletTask(index: any) {
     dispatch(deleteTask(index));
@@ -93,7 +94,7 @@ function TaskList({ navigation }: any) {
       </View>
       <View style={{ marginVertical: 20 }}>
         <Button label='Add task'
-          onPress={() => navigation.navigate("AddTask")} />
+          onPress={() => navigate("AddTask",{})} />
       </View>
     </ScrollView>
   )

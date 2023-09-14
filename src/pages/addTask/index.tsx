@@ -7,8 +7,9 @@ import { useAppDispatch, useAppSelector } from '../../slice/store';
 import { addTask, editTask } from '../../slice/card.slice.ts';
 import DateInput from '../../components/date';
 import TimeInput from '../../components/time';
+import { onAuthSuccess } from '../../App';
 
-function AddTask({ navigation, route }: any) {
+function AddTask({ route }: any) {
     const dispatch = useAppDispatch();
     const task = useAppSelector((state: any) => state?.card);
     const index = route?.params?.index;
@@ -74,7 +75,7 @@ function AddTask({ navigation, route }: any) {
                             dispatch(editTask({ index, value }))
                             :
                             dispatch(addTask(value))
-                        navigation.navigate('TaskList');
+                        onAuthSuccess();
                     }}
                 />
             </View>
