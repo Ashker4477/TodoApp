@@ -17,7 +17,7 @@ export function navigate(name: any, params: any) {
     navigationRef.navigate(name as never, params as never);
   }
 }
-export function onAuthSuccess() {
+export function onAddSuccess() {
   if (navigationRef.isReady()) {
     navigationRef.dispatch(
       CommonActions.reset({
@@ -25,6 +25,20 @@ export function onAuthSuccess() {
         routes: [
           {
             name: "TaskList",
+          },
+        ],
+      }),
+    );
+  }
+}
+export function onEditSuccess(name: string, index: number) {
+  if (navigationRef.isReady()) {
+    navigationRef.dispatch(
+      CommonActions.reset({
+        index: 0,
+        routes: [
+          {
+            name: name, params: { index }
           },
         ],
       }),

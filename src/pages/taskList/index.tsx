@@ -6,13 +6,13 @@ import { useAppDispatch, useAppSelector } from '../../slice/store';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { deleteTask } from '../../slice/card.slice.ts';
-import { navigate } from '../../App';
+import { navigate, onEditSuccess } from '../../App';
 
 function TaskList() {
   const task = useAppSelector((state: any) => state.card);
   const dispatch = useAppDispatch();
   function edittask(index: number) {
-    navigate("AddTask", { index });
+    onEditSuccess("AddTask", index );
   }
   function deletTask(index: any) {
     dispatch(deleteTask(index));
