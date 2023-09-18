@@ -1,11 +1,8 @@
 import React, { memo } from 'react'
 import { Image, StatusBar, Text, TouchableOpacity, View } from 'react-native'
 import styles from './style';
-import { Svg, Path } from 'react-native-svg';
-import { navigate } from '../../App';
 
-function GetStarted() {
-
+function GetStarted({ navigation: { navigate } }: any) {
     return (
         <View style={{ flex: 1 }}>
             <StatusBar
@@ -37,7 +34,7 @@ function GetStarted() {
                 <View style={styles.secTextView}>
                     <Text style={styles.secText}>Add a task to get started</Text>
                 </View>
-                <TouchableOpacity style={styles.secButton} onPress={() => navigate('AddTask',{})}>
+                <TouchableOpacity style={styles.secButton} onPress={() => navigate('AddTask', {})}>
                     <Text style={styles.secButtonText}>+</Text>
                 </TouchableOpacity>
             </View>

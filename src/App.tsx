@@ -2,13 +2,13 @@ import React from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer, createNavigationContainerRef, CommonActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
 import { Provider } from 'react-redux';
 import TaskList from './pages/taskList';
 import GetStarted from './pages/getStarted';
 import AddTask from './pages/addTask';
 import { PersistGate } from 'redux-persist/integration/react';
-import { store, persistor } from './slice/store';
+import { store, persistor, useAppSelector } from './slice/store';
+import { Routes } from './route';
 
 const Stack = createStackNavigator();
 export const navigationRef = createNavigationContainerRef();
@@ -45,17 +45,16 @@ export function onEditSuccess(name: string, index: number) {
     );
   }
 }
-
 function App(): JSX.Element {
-  const Appstore = store;
+  const task = useAppSelector((state: any) => state?.card);
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <NavigationContainer ref={navigationRef}>
-          <Stack.Navigator initialRouteName="GetStarted">
-            <Stack.Screen options={{ headerShown: false }} name="GetStarted" component={GetStarted} />
-            <Stack.Screen options={{ headerShown: false }} name="AddTask" component={AddTask} />
-            <Stack.Screen options={{ headerShown: false }} name="TaskList" component={TaskList} />
+          <Stack.Navigator initialRouteName={task?.length > 0 ? Routes?.TaskList : Routes?.GetStarted}>
+            <Stack.Screen options={{ headerShown: false }} name={Routes?.GetStarted} component={GetStarted} />
+            <Stack.Screen options={{ headerShown: false }} name={Routes?.AddTask} component={AddTask} />
+            <Stack.Screen options={{ headerShown: false }} name={Routes?.TaskList} component={TaskList} />
           </Stack.Navigator>
         </NavigationContainer>
       </PersistGate>
