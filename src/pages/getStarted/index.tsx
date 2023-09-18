@@ -1,28 +1,30 @@
-import React, { memo } from 'react'
-import { Image, StatusBar, Text, TouchableOpacity, View } from 'react-native'
+import React, { memo, useEffect } from 'react';
+import { Image, StatusBar, Text, TouchableOpacity, View } from 'react-native';
 import styles from './style';
+import { Svg, Path } from 'react-native-svg';
+import { useAppSelector } from '../../slice/store';
+import { onAddSuccess } from '../../App';
 
 function GetStarted({ navigation: { navigate } }: any) {
+    const task = useAppSelector((state: any) => state?.card);
+    useEffect(() => {
+        if (task?.length > 0) {
+            setTimeout(()=>{
+                onAddSuccess();
+            },500)
+        }
+        return()=>{
+            clearTimeout(500)
+        }
+    }, [task]);
+
     return (
         <View style={{ flex: 1 }}>
-            <StatusBar
-                barStyle={'light-content'}
-                backgroundColor={'#754cf1'} />
-            <View style={{
-                backgroundColor: "#754cf1",
-                zIndex: 10,
-                justifyContent: 'center',
-                alignItems: "center",
-                borderBottomLeftRadius: 100,
-                borderBottomRightRadius: 100,
-            }}>
-                <Image
-                    style={styles.dotImage}
-                    resizeMode='contain'
-                    source={require("../../assets/images/ellipse/Ellipse166.png")}
-                />
-                <Image resizeMode='contain'
-                    source={require("../../assets/images/task/TASK1.png")}
+            <StatusBar barStyle={'light-content'} backgroundColor={'#754cf1'} />
+            <View style={styles?.imageContainer}>
+                <Image style={styles.dotImage} resizeMode='contain'
+                    source={require("../../assets/images/ellipse/Ellipse166.png")} />
+                <Image resizeMode='contain' source={require("../../assets/images/task/TASK1.png")}
                     style={styles.image} />
             </View>
             <View style={{ position: "relative", top: -220 }}>

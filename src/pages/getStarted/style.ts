@@ -4,6 +4,14 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#754cf1",
   },
+  imageContainer: {
+    backgroundColor: "#754cf1",
+    zIndex: 10,
+    justifyContent: 'center',
+    alignItems: "center",
+    borderBottomLeftRadius: 100,
+    borderBottomRightRadius: 100,
+  },
   image: {
     width: 370,
     height: 400,
