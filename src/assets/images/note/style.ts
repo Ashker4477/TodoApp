@@ -13,14 +13,13 @@ const styles = StyleSheet.create({
         position: "absolute",
         transform: [{ rotate: '90deg' }],
         right: 0,
-        top: 0,
+        top: -25,
         zIndex: 10
     },
     img: {
         zIndex: 11,
-        width: 300,
-        height: 380,
-        marginTop: 9
+        width: 350,
+        height: 350
     },
     bg: {
         backgroundColor: "#eecf2",
@@ -34,7 +33,7 @@ const styles = StyleSheet.create({
     mT15: { marginTop: 15 },
     mH24: { marginHorizontal: 24 },
     buttonContainer: {
-        marginVertical: 25,
+        marginTop: 25,
     },
 });
 

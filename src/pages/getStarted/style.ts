@@ -7,20 +7,19 @@ const styles = StyleSheet.create({
   imageContainer: {
     backgroundColor: "#754cf1",
     zIndex: 10,
-    justifyContent: 'center',
-    alignItems: "center",
-    borderBottomLeftRadius: 100,
-    borderBottomRightRadius: 100,
+    alignItems: "center"
   },
   image: {
-    width: 370,
-    height: 400,
-    marginTop: 60
+    zIndex: 12,
+    position:"relative",
+    top: 85,
   },
+  parabla: { position: "relative", top: -391 },
   dotImage: {
     position: "absolute",
-    top: -40,
+    top: -10,
     left: 0,
+    zIndex: 11
   },
   secContainer: {
     position: "absolute",
@@ -40,15 +39,14 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   secButton: {
-    backgroundColor: "#754cf1",
+    backgroundColor: "#3e2b77",
     borderRadius: 100,
     paddingHorizontal: 20,
-    paddingVertical: 7,
+    paddingVertical: 6,
   },
   secButtonText: {
     color: "#fff",
-    fontWeight: "bold",
-    fontSize: 35
+    fontSize: 35,
   }
 });
 
