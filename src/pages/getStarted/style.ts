@@ -14,6 +14,8 @@ const styles = StyleSheet.create({
     zIndex: s(12),
     position: 'relative',
     top: vs(85),
+    width: s(400),
+    height: vs(500),
   },
   parabla: {position: 'relative', top: vs(-391)},
   dotImage: {
@@ -21,6 +23,8 @@ const styles = StyleSheet.create({
     top: vs(-10),
     left: s(0),
     zIndex: s(11),
+    width: s(260),
+    height: vs(300),
   },
   secContainer: {
     position: 'absolute',

@@ -15,7 +15,7 @@ function TimeInput({value, setValue}: any) {
         onPressIn={() => {
           setOpen(true);
         }}
-        image={{uri: 'time1.png'}}
+        image={{uri: 'time1'}}
       />
       <DatePicker
         modal

@@ -1,5 +1,12 @@
 import React, {memo} from 'react';
-import {ScrollView, StatusBar, Image, View, Text} from 'react-native';
+import {
+  ScrollView,
+  StatusBar,
+  Image,
+  View,
+  Text,
+  ImageBackground,
+} from 'react-native';
 import Button from '../../components/button';
 import styles from './style';
 import {useAppDispatch, useAppSelector} from '../../slice/store';
@@ -19,21 +26,21 @@ function TaskList() {
     dispatch(deleteTask(index));
   }
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.bg}>
       <StatusBar
         barStyle={'dark-content'}
         backgroundColor={'transparent'}
         animated
         translucent
       />
+      <ImageBackground
+        blurRadius={s(1)}
+        resizeMode="contain"
+        style={styles.img}
+        source={{uri: 'blue_dot'}}
+      />
       <View style={styles.headingContainer}>
         <Text style={styles.heading}>Tasks.</Text>
-        <Image
-          blurRadius={2}
-          resizeMode="contain"
-          style={styles.img}
-          source={{uri: 'blue_dot.png'}}
-        />
       </View>
       <ScrollView style={styles.container}>
         <View style={styles.listContainer}>
@@ -59,7 +66,7 @@ function TaskList() {
                     <Image
                       resizeMode="contain"
                       style={styles.timeImage}
-                      source={{uri: 'time1.png'}}
+                      source={{uri: 'time1'}}
                     />
                     <Text style={styles.time}>10:00 AM</Text>
                   </View>

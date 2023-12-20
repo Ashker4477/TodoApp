@@ -28,10 +28,11 @@ function GetStarted({navigation: {navigate}}: any) {
           style={styles?.dotImage}
           resizeMode="contain"
           source={{uri: 'ellipse166'}}
+          resizeMethod="scale"
         />
         <Image
           resizeMode="contain"
-          source={{uri: 'task1'}}
+          source={{uri: 'task_11x'}}
           style={styles.image}
         />
       </View>

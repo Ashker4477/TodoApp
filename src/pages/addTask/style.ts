@@ -16,6 +16,8 @@ const styles = StyleSheet.create({
     right: s(0),
     top: vs(0),
     zIndex: s(10),
+    height: vs(290),
+    width: s(290),
   },
   img: {
     zIndex: s(11),
@@ -28,6 +30,7 @@ const styles = StyleSheet.create({
     flex: s(1),
   },
   pencil: {
+    flex: 1,
     backgroundColor: '#eecf2',
     justifyContent: 'center',
     alignItems: 'center',
@@ -38,7 +41,6 @@ const styles = StyleSheet.create({
     marginVertical: vs(25),
   },
   row: {
-    flex: s(1),
     flexDirection: 'row',
   },
 });

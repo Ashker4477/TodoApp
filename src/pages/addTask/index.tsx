@@ -33,7 +33,7 @@ function AddTask({route}: any) {
     }
   }, [index, task]);
   return (
-    <View style={styles.row}>
+    <View style={styles.bg}>
       <StatusBar
         barStyle={'dark-content'}
         backgroundColor={'transparent'}
@@ -44,12 +44,12 @@ function AddTask({route}: any) {
         <Image
           resizeMode="contain"
           style={styles.dot}
-          source={{uri: 'blue_dot.png'}}
+          source={{uri: 'blue_dot'}}
         />
         <Image
           resizeMode="contain"
           style={styles.img}
-          source={{uri: 'pencil1.png'}}
+          source={{uri: 'pencil1'}}
         />
       </View>
       <ScrollView style={styles.bg} showsVerticalScrollIndicator>
@@ -60,7 +60,7 @@ function AddTask({route}: any) {
             onChangeText={(t: string) =>
               setValue((prev: any) => ({...prev, taskName: t}))
             }
-            image={{uri: 'note.png'}}
+            image={{uri: 'note'}}
           />
         </View>
         <View style={styles.mT15}>
@@ -70,7 +70,7 @@ function AddTask({route}: any) {
             onChangeText={(t: string) =>
               setValue((prev: any) => ({...prev, subject: t}))
             }
-            image={{uri: 'subject.png'}}
+            image={{uri: 'subject'}}
           />
         </View>
         <KeyboardAvoidingView>

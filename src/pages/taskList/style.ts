@@ -2,6 +2,9 @@ import {StyleSheet} from 'react-native';
 import {s, vs} from '../../utils/scale';
 
 const styles = StyleSheet.create({
+  bg: {
+    flex: 1,
+  },
   container: {
     backgroundColor: '#eeecf2',
   },
@@ -22,8 +25,9 @@ const styles = StyleSheet.create({
   },
   img: {
     position: 'absolute',
-    left: s(-30),
-    top: vs(-45),
+    top: s(35),
+    width: s(300),
+    height: vs(300),
   },
   listContainer: {
     paddingHorizontal: s(30),

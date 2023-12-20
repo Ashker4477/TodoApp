@@ -17,7 +17,7 @@ function DateInput({value, setValue}: any) {
         }}
         value={value ? value : ''}
         disabled
-        image={{uri: 'date.png'}}
+        image={{uri: 'date'}}
       />
       <DatePicker
         modal
