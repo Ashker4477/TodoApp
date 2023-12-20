@@ -31,18 +31,9 @@ function AddTask({route}: any) {
     if (index > -1) {
       setValue(task[index]);
     }
-    return () => {
-      setValue({
-        taskName: '',
-        subject: '',
-        date: '',
-        beginTime: '',
-        finishedTime: '',
-      });
-    };
-  }, [index]);
+  }, [index, task]);
   return (
-    <View style={{flex: 1, flexDirection: 'column'}}>
+    <View style={styles.row}>
       <StatusBar
         barStyle={'dark-content'}
         backgroundColor={'transparent'}

@@ -1,41 +1,46 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
+import {s, vs} from '../../utils/scale';
 
 const styles = StyleSheet.create({
-    container: {
-        flexDirection: 'row', // Arrange the inputs horizontally
-        justifyContent: 'space-between', // Create space between inputs
-        marginTop: 15,
-    },
-    inputContainer: {
-        flex: 1, // Allow inputs to share the available space equally
-    },
-    dot: {
-        position: "absolute",
-        transform: [{ rotate: '90deg' }],
-        right: 0,
-        top: 0,
-        zIndex: 10
-    },
-    img: {
-        zIndex: 11,
-        width: 300,
-        height: 380,
-        marginTop: 9
-    },
-    bg: {
-        backgroundColor: "#eecf2",
-        flex: 1,
-    },
-    pencil: {
-        backgroundColor: "#eecf2",
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    mT15: { marginTop: 15 },
-    mH24: { marginHorizontal: 24 },
-    buttonContainer: {
-        marginVertical: 25,
-    },
+  container: {
+    flexDirection: 'row', // Arrange the inputs horizontally
+    justifyContent: 'space-between', // Create space between inputs
+    marginTop: vs(15),
+  },
+  inputContainer: {
+    flex: s(1), // Allow inputs to share the available space equally
+  },
+  dot: {
+    position: 'absolute',
+    transform: [{rotate: '90deg'}],
+    right: s(0),
+    top: vs(0),
+    zIndex: s(10),
+  },
+  img: {
+    zIndex: s(11),
+    width: s(300),
+    height: vs(380),
+    marginTop: s(9),
+  },
+  bg: {
+    backgroundColor: '#eecf2',
+    flex: s(1),
+  },
+  pencil: {
+    backgroundColor: '#eecf2',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  mT15: {marginTop: vs(15)},
+  mH24: {marginHorizontal: s(24)},
+  buttonContainer: {
+    marginVertical: vs(25),
+  },
+  row: {
+    flex: s(1),
+    flexDirection: 'row',
+  },
 });
 
 export default styles;

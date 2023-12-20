@@ -1,53 +1,54 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
+import {s, vs} from '../../utils/scale';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#754cf1",
+    backgroundColor: '#754cf1',
   },
   imageContainer: {
-    backgroundColor: "#754cf1",
-    zIndex: 10,
-    alignItems: "center"
+    backgroundColor: '#754cf1',
+    zIndex: s(10),
+    alignItems: 'center',
   },
   image: {
-    zIndex: 12,
-    position:"relative",
-    top: 85,
+    zIndex: s(12),
+    position: 'relative',
+    top: vs(85),
   },
-  parabla: { position: "relative", top: -391 },
+  parabla: {position: 'relative', top: vs(-391)},
   dotImage: {
-    position: "absolute",
-    top: -10,
-    left: 0,
-    zIndex: 11
+    position: 'absolute',
+    top: vs(-10),
+    left: s(0),
+    zIndex: s(11),
   },
   secContainer: {
-    position: "absolute",
-    bottom: 50,
-    left: "22%",
-    justifyContent: "center",
-    alignItems: "center",
+    position: 'absolute',
+    bottom: vs(50),
+    left: '22%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   secTextView: {
-    width: 200
+    width: s(200),
   },
   secText: {
-    fontSize: 25,
-    color: "#000",
-    marginVertical: 10,
-    fontWeight: "800",
-    textAlign: "center",
+    fontSize: s(25),
+    color: '#000',
+    marginVertical: s(10),
+    fontWeight: '800',
+    textAlign: 'center',
   },
   secButton: {
-    backgroundColor: "#3e2b77",
-    borderRadius: 100,
-    paddingHorizontal: 20,
-    paddingVertical: 6,
+    backgroundColor: '#3e2b77',
+    borderRadius: s(100),
+    paddingHorizontal: s(20),
+    paddingVertical: vs(6),
   },
   secButtonText: {
-    color: "#fff",
-    fontSize: 35,
-  }
+    color: '#fff',
+    fontSize: s(35),
+  },
 });
 
 export default styles;

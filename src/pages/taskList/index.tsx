@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {deleteTask} from '../../slice/card.slice.ts';
 import {navigate, onEditSuccess} from '../../App';
+import {s} from '../../utils/scale';
 
 function TaskList() {
   const task = useAppSelector((state: any) => state.card);
@@ -39,20 +40,16 @@ function TaskList() {
           {task?.map((i: any, idx: number) => {
             return (
               <View key={idx} style={styles.card}>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                  }}>
+                <View style={styles.rowSpace}>
                   <Text style={styles.cardHead}>{i?.taskName}</Text>
-                  <View style={{flexDirection: 'row'}}>
+                  <View style={styles.row}>
                     <TouchableOpacity
                       onPress={() => edittask(idx)}
-                      style={{marginRight: 12}}>
-                      <Icon name="pencil" size={15} color="#754cf1" />
+                      style={styles.margin20}>
+                      <Icon name="pencil" size={s(15)} color="#754cf1" />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => deletTask(idx)}>
-                      <Icon name="trash" size={15} color="#754cf1" />
+                      <Icon name="trash" size={s(15)} color="#754cf1" />
                     </TouchableOpacity>
                   </View>
                 </View>
@@ -108,7 +105,7 @@ function TaskList() {
             </View>
           </View>
         </View>
-        <View style={{marginVertical: 20}}>
+        <View style={styles.mv20}>
           <Button label="Add task" onPress={() => navigate('AddTask', {})} />
         </View>
       </ScrollView>
